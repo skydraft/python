@@ -1,12 +1,16 @@
 def numericals(s):
 
     st = ''
-    count=0
+    dic = {}
 
     for i in s:
-        count+=1
-        t=s[:count].count(i)
-        st+=str(t)
+        if i in dic:
+
+            dic.update({i: dic.get(i)+1})
+            st+=str(dic.get(i))
+        else:
+            dic.update({i:1})
+            st += '1'
 
 
     return st
